@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html><head><title>Tokens and token classification</title><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta property="og:title" content="Tokens and token classification"/><meta property="og:description" content="See also: FAQ C is a general-purpose procedural programming language. C is one of the many programming languages that can be used to create programs and it remains to be a popular programming language in the academe and the IT industry."/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:width" content="1200"/><meta property="og:height" content="675"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="See also: FAQ C is a general-purpose procedural programming language. C is one of the many programming languages that can be used to create programs and it remains to be a popular programming language in the academe and the IT industry."/><meta name="generator" content="Quartz"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link href="../../index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" rel="stylesheet" type="text/css" spa-preserve/><script src="../../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch(`../../static/contentIndex.json`).then(data => data.json())</script></head><body data-slug="Term-1-A.Y.-2023---2024/CCPROG1/Tokens-and-token-classification"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h1 class="page-title "><a href="../..">🪽 みさき</a></h1><div class="spacer mobile-only"></div><div class="search "><div id="search-icon"><p>Search</p><div></div><svg tabIndex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search</title><desc id="desc">Search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></div><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div id="results-container"></div></div></div></div><div class="darkmode "><input class="toggle" id="darkmode-toggle" type="checkbox" tabIndex="-1"/><label id="toggle-label-light" for="darkmode-toggle" tabIndex="-1"><svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35;" xmlSpace="preserve"><title>Light mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg></label><label id="toggle-label-dark" for="darkmode-toggle" tabIndex="-1"><svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'" xmlSpace="preserve"><title>Dark mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></label></div><div class="explorer desktop-only"><button type="button" id="explorer" data-behavior="collapse" data-collapsed="collapsed" data-savestate="true" data-tree="[{&quot;path&quot;:&quot;Term 1 A.Y. 2023 - 2024&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;Term 1 A.Y. 2023 - 2024/CCICOMP&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;Term 1 A.Y. 2023 - 2024/CCPROG1&quot;,&quot;collapsed&quot;:true}]"><h1>Explorer</h1><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-content"><ul class="overflow" id="explorer-ul"><li><div><div class="folder-outer open"><ul style="padding-left:0;" class="content" data-folderul><li><div><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="/Term 1 A.Y. 2023 - 2024"><button class="folder-button"><p class="folder-title">Term 1 A.Y. 2023 - 2024</p></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="/Term 1 A.Y. 2023 - 2024"><li><div><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="/Term 1 A.Y. 2023 - 2024/CCICOMP"><button class="folder-button"><p class="folder-title">CCICOMP</p></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="/Term 1 A.Y. 2023 - 2024/CCICOMP"><li><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/(Q&amp;A)-Data-representation" data-for="Term-1-A.Y.-2023---2024/CCICOMP/(Q&amp;A)-Data-representation">(Q&amp;A) Data representation</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Application-software" data-for="Term-1-A.Y.-2023---2024/CCICOMP/Application-software">Application software</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Boolean,-logic-gates,-and-bitwise-operations" data-for="Term-1-A.Y.-2023---2024/CCICOMP/Boolean,-logic-gates,-and-bitwise-operations">Boolean, logic gates, and bitwise operations</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Character-representation" data-for="Term-1-A.Y.-2023---2024/CCICOMP/Character-representation">Character representation</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Data-representation" data-for="Term-1-A.Y.-2023---2024/CCICOMP/Data-representation">Data representation</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Floating-point-representation" data-for="Term-1-A.Y.-2023---2024/CCICOMP/Floating-point-representation">Floating-point representation</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Integer-representation" data-for="Term-1-A.Y.-2023---2024/CCICOMP/Integer-representation">Integer representation</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Internetworking" data-for="Term-1-A.Y.-2023---2024/CCICOMP/Internetworking">Internetworking</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Introduction-to-number-systems" data-for="Term-1-A.Y.-2023---2024/CCICOMP/Introduction-to-number-systems">Introduction to number systems</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Memory-components" data-for="Term-1-A.Y.-2023---2024/CCICOMP/Memory-components">Memory components</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/System-software" data-for="Term-1-A.Y.-2023---2024/CCICOMP/System-software">System software</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/System-unit-components" data-for="Term-1-A.Y.-2023---2024/CCICOMP/System-unit-components">System unit components</a></li></li></ul></div></div></li><li><div><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="/Term 1 A.Y. 2023 - 2024/CCPROG1"><button class="folder-button"><p class="folder-title">CCPROG1</p></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="/Term 1 A.Y. 2023 - 2024/CCPROG1"><li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/(Q&amp;A)-Functions-and-programs" data-for="Term-1-A.Y.-2023---2024/CCPROG1/(Q&amp;A)-Functions-and-programs">(Q&amp;A) Functions and programs</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/(Q&amp;A)-Tokens-and-token-classification" data-for="Term-1-A.Y.-2023---2024/CCPROG1/(Q&amp;A)-Tokens-and-token-classification">(Q&amp;A) Tokens and token classification</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Conditional-statements" data-for="Term-1-A.Y.-2023---2024/CCPROG1/Conditional-statements">Conditional statements</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Float-and-integer-operations" data-for="Term-1-A.Y.-2023---2024/CCPROG1/Float-and-integer-operations">Float and integer operations</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Formatted-input-and-output" data-for="Term-1-A.Y.-2023---2024/CCPROG1/Formatted-input-and-output">Formatted input and output</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Functions-and-programs" data-for="Term-1-A.Y.-2023---2024/CCPROG1/Functions-and-programs">Functions and programs</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Iterative-statements" data-for="Term-1-A.Y.-2023---2024/CCPROG1/Iterative-statements">Iterative statements</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Operator-types,-precedence,-and-associativity" data-for="Term-1-A.Y.-2023---2024/CCPROG1/Operator-types,-precedence,-and-associativity">Operator types, precedence, and associativity</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Pointers-and-pointer-variables" data-for="Term-1-A.Y.-2023---2024/CCPROG1/Pointers-and-pointer-variables">Pointers and pointer variables</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Problem-analysis,-logic-formulation-and-flowcharting" data-for="Term-1-A.Y.-2023---2024/CCPROG1/Problem-analysis,-logic-formulation-and-flowcharting">Problem analysis, logic formulation and flowcharting</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Tokens-and-token-classification" data-for="Term-1-A.Y.-2023---2024/CCPROG1/Tokens-and-token-classification">Tokens and token classification</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Variables-and-assignment" data-for="Term-1-A.Y.-2023---2024/CCPROG1/Variables-and-assignment">Variables and assignment</a></li></li></ul></div></div></li></ul></div></div></li></ul></div></div></li><li id="explorer-end"></li></ul></div></div><div class="toc desktop-only"><button type="button" id="toc"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content"><ul class="overflow"><li class="depth-0"><a href="#tokens" data-for="tokens">Tokens</a></li><li class="depth-1"><a href="#literals" data-for="literals">Literals</a></li><li class="depth-1"><a href="#identifiers" data-for="identifiers">Identifiers</a></li><li class="depth-1"><a href="#operators" data-for="operators">Operators</a></li><li class="depth-1"><a href="#keywords" data-for="keywords">Keywords</a></li><li class="depth-1"><a href="#separators-or-punctuation" data-for="separators-or-punctuation">Separators or punctuation</a></li><li class="depth-1"><a href="#comments" data-for="comments">Comments</a></li></ul></div></div></div><div class="center"><div class="page-header"><div class="popover-hint"><div class="explorer mobile-only"><button type="button" id="explorer" data-behavior="collapse" data-collapsed="collapsed" data-savestate="true" data-tree="[{&quot;path&quot;:&quot;Term 1 A.Y. 2023 - 2024&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;Term 1 A.Y. 2023 - 2024/CCICOMP&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;Term 1 A.Y. 2023 - 2024/CCPROG1&quot;,&quot;collapsed&quot;:true}]"><h1>Explorer</h1><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-content"><ul class="overflow" id="explorer-ul"><li><div><div class="folder-outer open"><ul style="padding-left:0;" class="content" data-folderul><li><div><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="/Term 1 A.Y. 2023 - 2024"><button class="folder-button"><p class="folder-title">Term 1 A.Y. 2023 - 2024</p></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="/Term 1 A.Y. 2023 - 2024"><li><div><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="/Term 1 A.Y. 2023 - 2024/CCICOMP"><button class="folder-button"><p class="folder-title">CCICOMP</p></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="/Term 1 A.Y. 2023 - 2024/CCICOMP"><li><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/(Q&amp;A)-Data-representation" data-for="Term-1-A.Y.-2023---2024/CCICOMP/(Q&amp;A)-Data-representation">(Q&amp;A) Data representation</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Application-software" data-for="Term-1-A.Y.-2023---2024/CCICOMP/Application-software">Application software</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Boolean,-logic-gates,-and-bitwise-operations" data-for="Term-1-A.Y.-2023---2024/CCICOMP/Boolean,-logic-gates,-and-bitwise-operations">Boolean, logic gates, and bitwise operations</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Character-representation" data-for="Term-1-A.Y.-2023---2024/CCICOMP/Character-representation">Character representation</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Data-representation" data-for="Term-1-A.Y.-2023---2024/CCICOMP/Data-representation">Data representation</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Floating-point-representation" data-for="Term-1-A.Y.-2023---2024/CCICOMP/Floating-point-representation">Floating-point representation</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Integer-representation" data-for="Term-1-A.Y.-2023---2024/CCICOMP/Integer-representation">Integer representation</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Internetworking" data-for="Term-1-A.Y.-2023---2024/CCICOMP/Internetworking">Internetworking</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Introduction-to-number-systems" data-for="Term-1-A.Y.-2023---2024/CCICOMP/Introduction-to-number-systems">Introduction to number systems</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Memory-components" data-for="Term-1-A.Y.-2023---2024/CCICOMP/Memory-components">Memory components</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/System-software" data-for="Term-1-A.Y.-2023---2024/CCICOMP/System-software">System software</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/System-unit-components" data-for="Term-1-A.Y.-2023---2024/CCICOMP/System-unit-components">System unit components</a></li></li></ul></div></div></li><li><div><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="/Term 1 A.Y. 2023 - 2024/CCPROG1"><button class="folder-button"><p class="folder-title">CCPROG1</p></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="/Term 1 A.Y. 2023 - 2024/CCPROG1"><li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/(Q&amp;A)-Functions-and-programs" data-for="Term-1-A.Y.-2023---2024/CCPROG1/(Q&amp;A)-Functions-and-programs">(Q&amp;A) Functions and programs</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/(Q&amp;A)-Tokens-and-token-classification" data-for="Term-1-A.Y.-2023---2024/CCPROG1/(Q&amp;A)-Tokens-and-token-classification">(Q&amp;A) Tokens and token classification</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Conditional-statements" data-for="Term-1-A.Y.-2023---2024/CCPROG1/Conditional-statements">Conditional statements</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Float-and-integer-operations" data-for="Term-1-A.Y.-2023---2024/CCPROG1/Float-and-integer-operations">Float and integer operations</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Formatted-input-and-output" data-for="Term-1-A.Y.-2023---2024/CCPROG1/Formatted-input-and-output">Formatted input and output</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Functions-and-programs" data-for="Term-1-A.Y.-2023---2024/CCPROG1/Functions-and-programs">Functions and programs</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Iterative-statements" data-for="Term-1-A.Y.-2023---2024/CCPROG1/Iterative-statements">Iterative statements</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Operator-types,-precedence,-and-associativity" data-for="Term-1-A.Y.-2023---2024/CCPROG1/Operator-types,-precedence,-and-associativity">Operator types, precedence, and associativity</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Pointers-and-pointer-variables" data-for="Term-1-A.Y.-2023---2024/CCPROG1/Pointers-and-pointer-variables">Pointers and pointer variables</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Problem-analysis,-logic-formulation-and-flowcharting" data-for="Term-1-A.Y.-2023---2024/CCPROG1/Problem-analysis,-logic-formulation-and-flowcharting">Problem analysis, logic formulation and flowcharting</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Tokens-and-token-classification" data-for="Term-1-A.Y.-2023---2024/CCPROG1/Tokens-and-token-classification">Tokens and token classification</a></li></li><li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Variables-and-assignment" data-for="Term-1-A.Y.-2023---2024/CCPROG1/Variables-and-assignment">Variables and assignment</a></li></li></ul></div></div></li></ul></div></div></li></ul></div></div></li><li id="explorer-end"></li></ul></div></div><h1 class="article-title ">Tokens and token classification</h1><p class="content-meta ">Sep 13, 2023, 7 min read</p><ul class="tags "><li><a href="../../tags/ccprog1" class="internal tag-link">#ccprog1</a></li></ul><div class="toc mobile-only"><button type="button" id="toc"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content"><ul class="overflow"><li class="depth-0"><a href="#tokens" data-for="tokens">Tokens</a></li><li class="depth-1"><a href="#literals" data-for="literals">Literals</a></li><li class="depth-1"><a href="#identifiers" data-for="identifiers">Identifiers</a></li><li class="depth-1"><a href="#operators" data-for="operators">Operators</a></li><li class="depth-1"><a href="#keywords" data-for="keywords">Keywords</a></li><li class="depth-1"><a href="#separators-or-punctuation" data-for="separators-or-punctuation">Separators or punctuation</a></li><li class="depth-1"><a href="#comments" data-for="comments">Comments</a></li></ul></div></div></div></div><article class="popover-hint"><p><em>See also</em>: <a href="../../Term-1-A.Y.-2023---2024/CCPROG1/(Q&amp;A)-Tokens-and-token-classification" class="internal" data-slug="Term-1-A.Y.-2023---2024/CCPROG1/(Q&amp;A)-Tokens-and-token-classification">FAQ</a>
+C is a general-purpose procedural programming language. C is one of the many programming languages that can be used to create programs and it remains to be a popular programming language in the academe and the IT industry. C and its descendants were used to create operating systems like UNIX and Windows as well as other popular software applications.
+A programming language is a formal language that is used to give instructions to a computer in the form of a program or code. Like any natural language, C has its own set of vocabulary and grammar. The words in C are called tokens and the grammar is called syntax.</p>
+<h2 id="tokens">Tokens<a aria-hidden="true" tabindex="-1" href="#tokens" class="internal"> §</a></h2>
+<p><img src="../../Term-1-A.Y.-2023---2024/CCPROG1/Images/Token-classification-in-C.png" width="auto" height="auto"/>
+C programs are composed of a sequence of characters that are grouped by a compiler into identifiable <strong>tokens</strong>. These groups of characters cannot be split up without changing their meaning. Tokens can generally be classified into <a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Tokens-and-token-classification#literals" class="internal" data-slug="Term-1-A.Y.-2023---2024/CCPROG1/Tokens-and-token-classification">literals</a> (numeric, character, and string), <a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Tokens-and-token-classification#identifiers" class="internal" data-slug="Term-1-A.Y.-2023---2024/CCPROG1/Tokens-and-token-classification">identifiers</a>, <a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Tokens-and-token-classification#operators" class="internal" data-slug="Term-1-A.Y.-2023---2024/CCPROG1/Tokens-and-token-classification">operators</a>, <a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Tokens-and-token-classification#keywords" class="internal" data-slug="Term-1-A.Y.-2023---2024/CCPROG1/Tokens-and-token-classification">keywords</a>, and <a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Tokens-and-token-classification#separators-or-punctuation" class="internal" data-slug="Term-1-A.Y.-2023---2024/CCPROG1/Tokens-and-token-classification">separators</a> (punctuation). For example, consider the statement:</p>
+<div data-rehype-pretty-code-fragment><pre style="background-color:var(--shiki-color-background);" tabindex="0" data-language="c" data-theme="default"><code data-language="c" data-theme="default"><span data-line><span style="color:var(--shiki-token-function);">printf</span><span style="color:var(--shiki-color-text);">(</span><span style="color:var(--shiki-token-string-expression);">&quot;Height: </span><span style="color:var(--shiki-token-constant);">%d</span><span style="color:var(--shiki-token-string-expression);">\n&quot;</span><span style="color:var(--shiki-token-punctuation);">,</span><span style="color:var(--shiki-color-text);"> height);</span></span></code></pre></div>
+<p>This statement consists of seven tokens:</p>
+<div data-rehype-pretty-code-fragment><pre style="background-color:var(--shiki-color-background);" tabindex="0" data-language="c" data-theme="default"><code data-language="c" data-theme="default"><span data-line><span style="color:var(--shiki-color-text);">printf</span><span style="color:var(--shiki-token-comment);">         // Identifier</span></span>
+<span data-line><span style="color:var(--shiki-color-text);">(</span><span style="color:var(--shiki-token-comment);">              // Seperator / punctuation</span></span>
+<span data-line><span style="color:var(--shiki-token-string-expression);">&quot;Height: </span><span style="color:var(--shiki-token-constant);">%d</span><span style="color:var(--shiki-token-string-expression);">\n&quot;</span><span style="color:var(--shiki-token-comment);"> // String literal</span></span>
+<span data-line><span style="color:var(--shiki-token-punctuation);">,</span><span style="color:var(--shiki-token-comment);">              // Separator / punctuation</span></span>
+<span data-line><span style="color:var(--shiki-color-text);">height</span><span style="color:var(--shiki-token-comment);">         // Identifier</span></span>
+<span data-line><span style="color:var(--shiki-color-text);">)</span><span style="color:var(--shiki-token-comment);">              // Separator / punctuation</span></span>
+<span data-line><span style="color:var(--shiki-color-text);">;</span><span style="color:var(--shiki-token-comment);">              // Separator / punctuation</span></span></code></pre></div>
+<p>Note that <strong>any</strong> amount of space—blanks, tabs, and newline characters—can be placed between tokens.</p>
+
+<h3 id="literals">Literals<a aria-hidden="true" tabindex="-1" href="#literals" class="internal"> §</a></h3>
+<p>Literals are used to represent <strong>fixed values</strong> and can generally be classified as numeric or non-numeric. They have a value and a <a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Data-representation#data-types" class="internal" data-slug="Term-1-A.Y.-2023---2024/CCICOMP/Data-representation">data type</a>, but are <strong>nonaddressable</strong>; i.e., they are stored in memory but there are no means of accessing that address. Examples include <code>1</code>, <code>2.5</code>, <code>'a'</code>, or <code>&quot;Hello, world!&quot;</code>.</p>
+
+<h4 id="numeric-literals-or-numeric-constants">Numeric literals or numeric constants<a aria-hidden="true" tabindex="-1" href="#numeric-literals-or-numeric-constants" class="internal"> §</a></h4>
+<p>Numeric literals can be further subdivided into <a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Data-representation#integers" class="internal" data-slug="Term-1-A.Y.-2023---2024/CCICOMP/Data-representation">integers</a> and <a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Data-representation#floating-point-numbers" class="internal" data-slug="Term-1-A.Y.-2023---2024/CCICOMP/Data-representation">floating-point numbers</a>. <code>int</code> values do not contain any fractional part (as “whole numbers”). <code>float</code> values, on the other hand, do contain fractional parts and can be expressed in scientific notation. In defining numeric constants, the following rules should be followed:</p>
+<ol>
+<li>No comma.</li>
+<li>No space between the unary sign (<code>+</code> or <code>-</code>) and the digits.</li>
+<li>Must begin and end with a digit.
+<ul>
+<li>In macro-definitions defined in <a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Functions-and-programs#preprocessor-directives" class="internal" data-slug="Term-1-A.Y.-2023---2024/CCPROG1/Functions-and-programs">preprocessor directives</a>, floating-point values are interpreted as <a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Floating-point-representation#ieee-double-precision" class="internal" data-slug="Term-1-A.Y.-2023---2024/CCICOMP/Floating-point-representation">double-precision</a> (<code>double</code>) unless specified otherwise by appending <code>f</code> to the value.</li>
+</ul>
+</li>
+</ol>
+
+<h4 id="character-literals">Character literals<a aria-hidden="true" tabindex="-1" href="#character-literals" class="internal"> §</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Escape sequence</strong></th><th><strong>Represented character</strong></th></tr></thead><tbody><tr><td><code>\a</code></td><td><strong>Alert</strong></td></tr><tr><td><code>\b</code></td><td><strong>Backspace</strong></td></tr><tr><td><code>\e</code></td><td>Escape character (non-standard)</td></tr><tr><td><code>\f</code></td><td>Formfeed page break</td></tr><tr><td><code>\n</code></td><td><strong>Newline</strong> (line feed)</td></tr><tr><td><code>\r</code></td><td>Carriage return</td></tr><tr><td><code>\t</code></td><td><strong>Horizontal tab</strong></td></tr><tr><td><code>\v</code></td><td>Vertical tab</td></tr><tr><td><code>\\</code></td><td><strong>Backslash</strong></td></tr><tr><td><code>\'</code></td><td><strong>Single quote</strong> (apostrophe)</td></tr><tr><td><code>\&quot;</code></td><td><strong>Double quote</strong></td></tr><tr><td><code>\?</code></td><td>Question mark</td></tr><tr><td><code>\0</code></td><td><strong>Null character</strong></td></tr><tr><td><code>%%</code></td><td><strong>Percent symbol</strong></td></tr></tbody></table>
+
+
+
+<div class="math math-display"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"></span></span></span></div>
+<p>A character literal is a single <a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Data-representation#characters" class="internal" data-slug="Term-1-A.Y.-2023---2024/CCICOMP/Data-representation">character</a> enclosed in single quotes(<code>'</code>). Examples include <code>'a'</code>, <code>'I'</code>, <code>'+'</code>, <code>'2'</code> Note that there are some special characters that require using a backslash (<code>\</code>; as used in escape sequences seen in the table above) or a percentage symbol (<code>%</code>; as used in <strong>placeholders</strong> such as in formatted input/output).</p>
+<blockquote>
+<p>Common escape sequences covered within CCPROG1 are highlighted in bold.</p>
+</blockquote>
+
+<h4 id="string-literals">String literals<a aria-hidden="true" tabindex="-1" href="#string-literals" class="internal"> §</a></h4>
+<p>A series of characters is called a <a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Data-representation#string" class="internal" data-slug="Term-1-A.Y.-2023---2024/CCICOMP/Data-representation">string</a>. A string literal should be enclosed in double-quotes (<code>&quot;&quot;</code>). Note that certain special characters also need the escape character backslash (<code>\</code>) inside the double-quotes, e.g., <code>\&quot;</code> for including a double-quote character within the string.
+<em>Examples:</em></p>
+<ul>
+<li><code>&quot;De La Salle University&quot;</code></li>
+<li><code>&quot;a string with double quotes \&quot; within&quot;</code></li>
+<li><code>&quot;a single backslash \\ is in this string&quot;</code></li>
+</ul>
+
+<h3 id="identifiers">Identifiers<a aria-hidden="true" tabindex="-1" href="#identifiers" class="internal"> §</a></h3>
+<p><strong>Identifiers</strong> are descriptive names that are given to the variables, constants, and other entities in our program. Identifiers are a sequence of letters, digits, and the special character <code>_</code> (underscore). They are defined by the programmer and as such should be descriptive. Although C places no limit on the maximum length of an identifier (albeit compilers are only required to remember the first 63 characters in C99), avoid using names that are too short or too long. Limit the identifiers from 8 to 15 characters only.
+There are some rules and guidelines for defining identifiers. They are as follows:</p>
+<ol>
+<li>It must consist only of letters, digits, and underscores.</li>
+<li>An identifier cannot begin with a digit.</li>
+<li>An identifier defined in the C standard library should not be redefined. <a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Tokens-and-token-classification#keywords" class="internal" data-slug="Term-1-A.Y.-2023---2024/CCPROG1/Tokens-and-token-classification">Keywords or reserved words</a> are also invalid <em><strong>identifiers</strong></em>.</li>
+<li>Identifiers are case sensitive, meaning uppercase is not equal to the lowercase.</li>
+</ol>
+
+<h4 id="hungarian-notation">Hungarian notation<a aria-hidden="true" tabindex="-1" href="#hungarian-notation" class="internal"> §</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Data Type</strong></th><th><strong>Prefix</strong></th></tr></thead><tbody><tr><td><code>int</code></td><td><code>n</code></td></tr><tr><td><code>long</code></td><td><code>l</code></td></tr><tr><td><code>float</code></td><td><code>f</code></td></tr><tr><td><code>double</code></td><td><code>d</code></td></tr><tr><td><code>char</code></td><td><code>c</code></td></tr></tbody></table>
+
+
+
+<div class="math math-display"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"></span></span></span></div>
+<p>As a convention, we add prefixes in our variables to easily identify their <a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Data-representation#data-types" class="internal" data-slug="Term-1-A.Y.-2023---2024/CCICOMP/Data-representation">data type</a>. This is referred to as <strong>Hungarian notation</strong>.</p>
+
+<h4 id="constants">Constants<a aria-hidden="true" tabindex="-1" href="#constants" class="internal"> §</a></h4>
+<p>Constants are entities that can store a value but cannot be changed. Usually, constant identifiers are written using all capital letters with underscores between each word. It is suggested that we use all capital letters when naming constants to distinguish them from variables.
+<em>Examples</em>:</p>
+<ul>
+<li><code>MAX</code></li>
+<li><code>NUM_STUDENTS</code>
+Constants are usually defined at the beginning of a program:</li>
+</ul>
+<pre><code> #define &lt;constant identifier> &lt;literal>
+</code></pre>
+
+<h3 id="operators">Operators<a aria-hidden="true" tabindex="-1" href="#operators" class="internal"> §</a></h3>
+<p>An operator is a symbol in C that is used to perform certain operations on values or variables. For example, the arithmetic operators: <code>*</code>, <code>/</code>, <code>%</code>, <code>+</code>, and <code>-</code> correspond to the operations: multiplication, division, modulo, addition, and subtraction, respectively. Furthermore, evaluating operators <a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Operator-types,-precedence,-and-associativity#operator-precedence-and-associativity" class="internal" data-slug="Term-1-A.Y.-2023---2024/CCPROG1/Operator-types,-precedence,-and-associativity">follows a hierarchy of priorities</a>. Note that the <a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Data-representation#data-types" class="internal" data-slug="Term-1-A.Y.-2023---2024/CCICOMP/Data-representation">data type</a> (whether it is an integer or floating-point number) of the operands <a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Float-and-integer-operations" class="internal" data-slug="Term-1-A.Y.-2023---2024/CCPROG1/Float-and-integer-operations">affects</a> the result of the operation. The three basic types of operators are:</p>
+<ul>
+<li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Operator-types,-precedence,-and-associativity#arithmetic-operators" class="internal" data-slug="Term-1-A.Y.-2023---2024/CCPROG1/Operator-types,-precedence,-and-associativity">Arithmetic operators</a></li>
+<li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Operator-types,-precedence,-and-associativity#relational-operators" class="internal" data-slug="Term-1-A.Y.-2023---2024/CCPROG1/Operator-types,-precedence,-and-associativity">Relational operators</a> (<code>i</code> is <strong>greater than</strong> <code>0</code>)</li>
+<li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Operator-types,-precedence,-and-associativity#logical-operators" class="internal" data-slug="Term-1-A.Y.-2023---2024/CCPROG1/Operator-types,-precedence,-and-associativity">Logical operators</a> (<code>i</code> is greater than <code>0</code> <strong>and</strong> less than <code>10</code>)</li>
+</ul>
+
+<h3 id="keywords">Keywords<a aria-hidden="true" tabindex="-1" href="#keywords" class="internal"> §</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Keyword</th><th>Definition</th></tr></thead><tbody><tr><td><code>auto</code></td><td>Specifies automatic storage duration for a variable.</td></tr><tr><td><code>break</code></td><td>Used to exit from a loop or <code>switch</code> statement.</td></tr><tr><td><code>case</code></td><td>Used to label values in a <code>switch</code> statement.</td></tr><tr><td><code>char</code></td><td>Data type to store character values.</td></tr><tr><td><code>const</code></td><td>Declares a variable as constant, preventing modification.</td></tr><tr><td><code>continue</code></td><td>Jumps to the next iteration in a loop.</td></tr><tr><td><code>default</code></td><td>Specifies the code to be executed in a <code>switch</code> statement if no case matches.</td></tr><tr><td><code>do</code></td><td>Looping construct that executes a block of code at least once.</td></tr><tr><td><code>double</code></td><td>Data type to store double-precision floating-point numbers.</td></tr><tr><td><code>else</code></td><td>Used to specify the alternative code in an <code>if</code> statement.</td></tr><tr><td><code>enum</code></td><td>Defines an enumeration type with symbolic constants.</td></tr><tr><td><code>extern</code></td><td>Declares a variable or function that is defined in another source file.</td></tr><tr><td><code>float</code></td><td>Data type to store floating-point numbers.</td></tr><tr><td><code>for</code></td><td>Used to create a loop with initialization, condition, and increment parts.</td></tr><tr><td><code>goto</code></td><td>Transfers control to a labeled statement.</td></tr><tr><td><code>if</code></td><td>Conditional statement for making decisions.</td></tr><tr><td><code>int</code></td><td>Data type to store integers.</td></tr><tr><td><code>long</code></td><td>Used to declare a variable with an extended range.</td></tr><tr><td><code>register</code></td><td>Suggests that a variable should be stored in a register.</td></tr><tr><td><code>return</code></td><td>Returns a value from a function.</td></tr><tr><td><code>short</code></td><td>Data type to store integers with a smaller range.</td></tr><tr><td><code>signed</code></td><td>Specifies the sign of a data type, can be positive or negative.</td></tr><tr><td><code>sizeof</code></td><td>Returns the size in bytes of a data type or object.</td></tr><tr><td><code>static</code></td><td>Specifies that a variable retains its value between function calls.</td></tr><tr><td><code>struct</code></td><td>Defines a composite data structure with multiple members.</td></tr><tr><td><code>switch</code></td><td>A control statement for multi-way branching.</td></tr><tr><td><code>typedef</code></td><td>Used to create new data types with type aliases.</td></tr><tr><td><code>union</code></td><td>A data structure that can store different data types.</td></tr><tr><td><code>unsigned</code></td><td>Data type modifier for integers, representing only positive values.</td></tr><tr><td><code>void</code></td><td>Represents an empty data type or return type of a function that doesn’t return anything.</td></tr><tr><td><code>volatile</code></td><td>Suggests that a variable’s value can change unexpectedly.</td></tr><tr><td><code>while</code></td><td>Looping construct that repeatedly executes a block of code.</td></tr></tbody></table>
+
+
+
+<div class="math math-display"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"></span></span></span></div>
+<p><strong>Keywords</strong> are words that have a special meaning in C. <a href="../../Term-1-A.Y.-2023---2024/CCPROG1/(Q&amp;A)-Tokens-and-token-classification#can-i-use-any-name-for-the-variables" class="internal" data-slug="Term-1-A.Y.-2023---2024/CCPROG1/(Q&amp;A)-Tokens-and-token-classification">Reserved words are words that cannot be used as identifiers.</a> Most of the keywords in C are also reserved words, therefore cannot be used to name entities in your program such as variables.</p>
+
+<h3 id="separators-or-punctuation">Separators or punctuation<a aria-hidden="true" tabindex="-1" href="#separators-or-punctuation" class="internal"> §</a></h3>
+<p>There are some symbols in C that are used to separate tokens; these are called <strong>separators</strong>. Spaces, tabs, and newlines (also called <strong>whitespaces</strong>) are also used to separate tokens but are <strong>not</strong> tokens themselves.
+<em>Examples</em>:
+<code>, ; : { }</code></p>
+
+<h3 id="comments">Comments<a aria-hidden="true" tabindex="-1" href="#comments" class="internal"> §</a></h3>
+<p>Comments are not processed as tokens and are usually ignored by the compiler, replacing them with a <strong>single space charaacter</strong>; i.e., a statement such as:</p>
+<div data-rehype-pretty-code-fragment><pre style="background-color:var(--shiki-color-background);" tabindex="0" data-language="c" data-theme="default"><code data-language="c" data-theme="default"><span data-line><span style="color:var(--shiki-color-text);">a</span><span style="color:var(--shiki-token-comment);">/**/</span><span style="color:var(--shiki-color-text);">b </span><span style="color:var(--shiki-token-keyword);">=</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-constant);">0</span><span style="color:var(--shiki-color-text);">;</span></span></code></pre></div>
+<p>—will be interpreted as:</p>
+<div data-rehype-pretty-code-fragment><pre style="background-color:var(--shiki-color-background);" tabindex="0" data-language="c" data-theme="default"><code data-language="c" data-theme="default"><span data-line><span style="color:var(--shiki-color-text);">a b </span><span style="color:var(--shiki-token-keyword);">=</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-constant);">0</span><span style="color:var(--shiki-color-text);">;</span></span></code></pre></div>
+<p>Comments are processed before preprocessing directives are executed. The main use of comments is to make the code more readable and understandable by <a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Problem-analysis,-logic-formulation-and-flowcharting#documentation--maintenance" class="internal" data-slug="Term-1-A.Y.-2023---2024/CCPROG1/Problem-analysis,-logic-formulation-and-flowcharting">explaining part of the code in natural language</a>. Usually, introductory comments are added to the beginning of a code that contains the name of the author, the date it was written, and any assumptions made by the programmer. This is not required but it is recommended for good programming practice.
+The symbols <code>/*</code> signify the start of the comment, while <code>*/</code> signify the end of the comment. A comment enclosed in <code>/* */</code> can encompass more than one line. Comments may also appear within the main program or in functions to explain code.</p>
+<blockquote>
+<p>Single-line comments denoted by <code>//</code> are only possible in version C99 and later. Comments enclosed in <code>/* */</code> cannot be nested inside each other, but comments denoted by <code>//</code> can be nested inside <code>/* */</code>.</p>
+</blockquote>
+
+<p><iframe src="../../Term-1-A.Y.-2023---2024/CCPROG1/Documents/02---Tokens-in-C.pdf"></iframe></p>
+<p><iframe src="../../Term-1-A.Y.-2023---2024/CCPROG1/Documents/03---Expressions-in-C.pdf"></iframe></p>
+<p><iframe src="../../Term-1-A.Y.-2023---2024/CCPROG1/Documents/05---Variable-Declaration-and-Assignment-Statement.pdf"></iframe></p></article></div><div class="right sidebar"><div class="graph "><h3>Graph View</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[]}"></div><svg version="1.1" id="global-graph-icon" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xmlSpace="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+	s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+	c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+	C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+	c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+	v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+	s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+	C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+	S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+	s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+	s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[]}"></div></div></div><div class="backlinks "><h3>Backlinks</h3><ul class="overflow"><li><a href="../../Term-1-A.Y.-2023---2024/CCICOMP/Data-representation" class="internal">Data representation</a></li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/(Q&amp;A)-Functions-and-programs" class="internal">(Q&amp;A) Functions and programs</a></li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/(Q&amp;A)-Tokens-and-token-classification" class="internal">(Q&amp;A) Tokens and token classification</a></li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Float-and-integer-operations" class="internal">Float and integer operations</a></li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Formatted-input-and-output" class="internal">Formatted input and output</a></li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Operator-types,-precedence,-and-associativity" class="internal">Operator types, precedence, and associativity</a></li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Problem-analysis,-logic-formulation-and-flowcharting" class="internal">Problem analysis, logic formulation and flowcharting</a></li><li><a href="../../Term-1-A.Y.-2023---2024/CCPROG1/Tokens-and-token-classification" class="internal">Tokens and token classification</a></li></ul></div></div></div><footer class><hr/><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.1.0</a>, © 2023</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></body><script type="application/javascript">// quartz/components/scripts/quartz/components/scripts/callout.inline.ts
+function toggleCallout() {
+  const outerBlock = this.parentElement;
+  outerBlock.classList.toggle(`is-collapsed`);
+  const collapsed = outerBlock.classList.contains(`is-collapsed`);
+  const height = collapsed ? this.scrollHeight : outerBlock.scrollHeight;
+  outerBlock.style.maxHeight = height + `px`;
+  let current = outerBlock;
+  let parent = outerBlock.parentElement;
+  while (parent) {
+    if (!parent.classList.contains(`callout`)) {
+      return;
+    }
+    const collapsed2 = parent.classList.contains(`is-collapsed`);
+    const height2 = collapsed2 ? parent.scrollHeight : parent.scrollHeight + current.scrollHeight;
+    parent.style.maxHeight = height2 + `px`;
+    current = parent;
+    parent = parent.parentElement;
+  }
+}
+function setupCallout() {
+  const collapsible = document.getElementsByClassName(
+    `callout is-collapsible`
+  );
+  for (const div of collapsible) {
+    const title = div.firstElementChild;
+    if (title) {
+      title.removeEventListener(`click`, toggleCallout);
+      title.addEventListener(`click`, toggleCallout);
+      const collapsed = div.classList.contains(`is-collapsed`);
+      const height = collapsed ? title.scrollHeight : div.scrollHeight;
+      div.style.maxHeight = height + `px`;
+    }
+  }
+}
+document.addEventListener(`nav`, setupCallout);
+window.addEventListener(`resize`, setupCallout);
+</script><script type="module">
+          import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+          const darkMode = document.documentElement.getAttribute('saved-theme') === 'dark'
+          mermaid.initialize({
+            startOnLoad: false,
+            securityLevel: 'loose',
+            theme: darkMode ? 'dark' : 'default'
+          });
+          document.addEventListener('nav', async () => {
+            await mermaid.run({
+              querySelector: '.mermaid'
+            })
+          });
+          </script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script type="application/javascript">
+          const socket = new WebSocket('ws://localhost:3001')
+          socket.addEventListener('message', () => document.location.reload())
+        </script><script src="../../postscript.js" type="module"></script></html>
