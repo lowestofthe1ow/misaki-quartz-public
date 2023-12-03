@@ -198,9 +198,9 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   mod
 ));
 
-// quartz/node_modules/flexsearch/dist/flexsearch.bundle.js
+// node_modules/flexsearch/dist/flexsearch.bundle.js
 var require_flexsearch_bundle = __commonJS({
-  "quartz/node_modules/flexsearch/dist/flexsearch.bundle.js"(exports, module) {
+  "node_modules/flexsearch/dist/flexsearch.bundle.js"(exports, module) {
     (function _f(self) {
       "use strict";
       try {
@@ -1124,7 +1124,7 @@ function removeAllChildren(node) {
   }
 }
 
-// quartz/node_modules/github-slugger/index.js
+// node_modules/github-slugger/index.js
 var own = Object.hasOwnProperty;
 
 // quartz/util/path.ts
@@ -1430,7 +1430,7 @@ async function fillDocument(index2, data) {
   }
 }
 })();
-(function () {// quartz/node_modules/d3-dispatch/src/dispatch.js
+(function () {// node_modules/d3-dispatch/src/dispatch.js
 var noop = { value: () => {
 } };
 function dispatch() {
@@ -1517,7 +1517,7 @@ function set(type2, name, callback) {
 }
 var dispatch_default = dispatch;
 
-// quartz/node_modules/d3-selection/src/namespaces.js
+// node_modules/d3-selection/src/namespaces.js
 var xhtml = "http://www.w3.org/1999/xhtml";
 var namespaces_default = {
   svg: "http://www.w3.org/2000/svg",
@@ -1527,7 +1527,7 @@ var namespaces_default = {
   xmlns: "http://www.w3.org/2000/xmlns/"
 };
 
-// quartz/node_modules/d3-selection/src/namespace.js
+// node_modules/d3-selection/src/namespace.js
 function namespace_default(name) {
   var prefix = name += "", i = prefix.indexOf(":");
   if (i >= 0 && (prefix = name.slice(0, i)) !== "xmlns")
@@ -1535,7 +1535,7 @@ function namespace_default(name) {
   return namespaces_default.hasOwnProperty(prefix) ? { space: namespaces_default[prefix], local: name } : name;
 }
 
-// quartz/node_modules/d3-selection/src/creator.js
+// node_modules/d3-selection/src/creator.js
 function creatorInherit(name) {
   return function() {
     var document2 = this.ownerDocument, uri = this.namespaceURI;
@@ -1552,7 +1552,7 @@ function creator_default(name) {
   return (fullname.local ? creatorFixed : creatorInherit)(fullname);
 }
 
-// quartz/node_modules/d3-selection/src/selector.js
+// node_modules/d3-selection/src/selector.js
 function none() {
 }
 function selector_default(selector) {
@@ -1561,7 +1561,7 @@ function selector_default(selector) {
   };
 }
 
-// quartz/node_modules/d3-selection/src/selection/select.js
+// node_modules/d3-selection/src/selection/select.js
 function select_default(select) {
   if (typeof select !== "function")
     select = selector_default(select);
@@ -1577,12 +1577,12 @@ function select_default(select) {
   return new Selection(subgroups, this._parents);
 }
 
-// quartz/node_modules/d3-selection/src/array.js
+// node_modules/d3-selection/src/array.js
 function array(x2) {
   return x2 == null ? [] : Array.isArray(x2) ? x2 : Array.from(x2);
 }
 
-// quartz/node_modules/d3-selection/src/selectorAll.js
+// node_modules/d3-selection/src/selectorAll.js
 function empty() {
   return [];
 }
@@ -1592,7 +1592,7 @@ function selectorAll_default(selector) {
   };
 }
 
-// quartz/node_modules/d3-selection/src/selection/selectAll.js
+// node_modules/d3-selection/src/selection/selectAll.js
 function arrayAll(select) {
   return function() {
     return array(select.apply(this, arguments));
@@ -1614,7 +1614,7 @@ function selectAll_default(select) {
   return new Selection(subgroups, parents);
 }
 
-// quartz/node_modules/d3-selection/src/matcher.js
+// node_modules/d3-selection/src/matcher.js
 function matcher_default(selector) {
   return function() {
     return this.matches(selector);
@@ -1626,7 +1626,7 @@ function childMatcher(selector) {
   };
 }
 
-// quartz/node_modules/d3-selection/src/selection/selectChild.js
+// node_modules/d3-selection/src/selection/selectChild.js
 var find = Array.prototype.find;
 function childFind(match) {
   return function() {
@@ -1640,7 +1640,7 @@ function selectChild_default(match) {
   return this.select(match == null ? childFirst : childFind(typeof match === "function" ? match : childMatcher(match)));
 }
 
-// quartz/node_modules/d3-selection/src/selection/selectChildren.js
+// node_modules/d3-selection/src/selection/selectChildren.js
 var filter = Array.prototype.filter;
 function children() {
   return Array.from(this.children);
@@ -1654,7 +1654,7 @@ function selectChildren_default(match) {
   return this.selectAll(match == null ? children : childrenFilter(typeof match === "function" ? match : childMatcher(match)));
 }
 
-// quartz/node_modules/d3-selection/src/selection/filter.js
+// node_modules/d3-selection/src/selection/filter.js
 function filter_default(match) {
   if (typeof match !== "function")
     match = matcher_default(match);
@@ -1668,12 +1668,12 @@ function filter_default(match) {
   return new Selection(subgroups, this._parents);
 }
 
-// quartz/node_modules/d3-selection/src/selection/sparse.js
+// node_modules/d3-selection/src/selection/sparse.js
 function sparse_default(update) {
   return new Array(update.length);
 }
 
-// quartz/node_modules/d3-selection/src/selection/enter.js
+// node_modules/d3-selection/src/selection/enter.js
 function enter_default() {
   return new Selection(this._enter || this._groups.map(sparse_default), this._parents);
 }
@@ -1700,14 +1700,14 @@ EnterNode.prototype = {
   }
 };
 
-// quartz/node_modules/d3-selection/src/constant.js
+// node_modules/d3-selection/src/constant.js
 function constant_default(x2) {
   return function() {
     return x2;
   };
 }
 
-// quartz/node_modules/d3-selection/src/selection/data.js
+// node_modules/d3-selection/src/selection/data.js
 function bindIndex(parent, group, enter, update, exit, data) {
   var i = 0, node, groupLength = group.length, dataLength = data.length;
   for (; i < dataLength; ++i) {
@@ -1783,12 +1783,12 @@ function arraylike(data) {
   return typeof data === "object" && "length" in data ? data : Array.from(data);
 }
 
-// quartz/node_modules/d3-selection/src/selection/exit.js
+// node_modules/d3-selection/src/selection/exit.js
 function exit_default() {
   return new Selection(this._exit || this._groups.map(sparse_default), this._parents);
 }
 
-// quartz/node_modules/d3-selection/src/selection/join.js
+// node_modules/d3-selection/src/selection/join.js
 function join_default(onenter, onupdate, onexit) {
   var enter = this.enter(), update = this, exit = this.exit();
   if (typeof onenter === "function") {
@@ -1810,7 +1810,7 @@ function join_default(onenter, onupdate, onexit) {
   return enter && update ? enter.merge(update).order() : update;
 }
 
-// quartz/node_modules/d3-selection/src/selection/merge.js
+// node_modules/d3-selection/src/selection/merge.js
 function merge_default(context) {
   var selection2 = context.selection ? context.selection() : context;
   for (var groups0 = this._groups, groups1 = selection2._groups, m0 = groups0.length, m1 = groups1.length, m2 = Math.min(m0, m1), merges = new Array(m0), j = 0; j < m2; ++j) {
@@ -1826,7 +1826,7 @@ function merge_default(context) {
   return new Selection(merges, this._parents);
 }
 
-// quartz/node_modules/d3-selection/src/selection/order.js
+// node_modules/d3-selection/src/selection/order.js
 function order_default() {
   for (var groups = this._groups, j = -1, m2 = groups.length; ++j < m2; ) {
     for (var group = groups[j], i = group.length - 1, next = group[i], node; --i >= 0; ) {
@@ -1840,7 +1840,7 @@ function order_default() {
   return this;
 }
 
-// quartz/node_modules/d3-selection/src/selection/sort.js
+// node_modules/d3-selection/src/selection/sort.js
 function sort_default(compare) {
   if (!compare)
     compare = ascending;
@@ -1861,7 +1861,7 @@ function ascending(a2, b) {
   return a2 < b ? -1 : a2 > b ? 1 : a2 >= b ? 0 : NaN;
 }
 
-// quartz/node_modules/d3-selection/src/selection/call.js
+// node_modules/d3-selection/src/selection/call.js
 function call_default() {
   var callback = arguments[0];
   arguments[0] = this;
@@ -1869,12 +1869,12 @@ function call_default() {
   return this;
 }
 
-// quartz/node_modules/d3-selection/src/selection/nodes.js
+// node_modules/d3-selection/src/selection/nodes.js
 function nodes_default() {
   return Array.from(this);
 }
 
-// quartz/node_modules/d3-selection/src/selection/node.js
+// node_modules/d3-selection/src/selection/node.js
 function node_default() {
   for (var groups = this._groups, j = 0, m2 = groups.length; j < m2; ++j) {
     for (var group = groups[j], i = 0, n = group.length; i < n; ++i) {
@@ -1886,7 +1886,7 @@ function node_default() {
   return null;
 }
 
-// quartz/node_modules/d3-selection/src/selection/size.js
+// node_modules/d3-selection/src/selection/size.js
 function size_default() {
   let size = 0;
   for (const node of this)
@@ -1894,12 +1894,12 @@ function size_default() {
   return size;
 }
 
-// quartz/node_modules/d3-selection/src/selection/empty.js
+// node_modules/d3-selection/src/selection/empty.js
 function empty_default() {
   return !this.node();
 }
 
-// quartz/node_modules/d3-selection/src/selection/each.js
+// node_modules/d3-selection/src/selection/each.js
 function each_default(callback) {
   for (var groups = this._groups, j = 0, m2 = groups.length; j < m2; ++j) {
     for (var group = groups[j], i = 0, n = group.length, node; i < n; ++i) {
@@ -1910,7 +1910,7 @@ function each_default(callback) {
   return this;
 }
 
-// quartz/node_modules/d3-selection/src/selection/attr.js
+// node_modules/d3-selection/src/selection/attr.js
 function attrRemove(name) {
   return function() {
     this.removeAttribute(name);
@@ -1958,12 +1958,12 @@ function attr_default(name, value) {
   return this.each((value == null ? fullname.local ? attrRemoveNS : attrRemove : typeof value === "function" ? fullname.local ? attrFunctionNS : attrFunction : fullname.local ? attrConstantNS : attrConstant)(fullname, value));
 }
 
-// quartz/node_modules/d3-selection/src/window.js
+// node_modules/d3-selection/src/window.js
 function window_default(node) {
   return node.ownerDocument && node.ownerDocument.defaultView || node.document && node || node.defaultView;
 }
 
-// quartz/node_modules/d3-selection/src/selection/style.js
+// node_modules/d3-selection/src/selection/style.js
 function styleRemove(name) {
   return function() {
     this.style.removeProperty(name);
@@ -1990,7 +1990,7 @@ function styleValue(node, name) {
   return node.style.getPropertyValue(name) || window_default(node).getComputedStyle(node, null).getPropertyValue(name);
 }
 
-// quartz/node_modules/d3-selection/src/selection/property.js
+// node_modules/d3-selection/src/selection/property.js
 function propertyRemove(name) {
   return function() {
     delete this[name];
@@ -2014,7 +2014,7 @@ function property_default(name, value) {
   return arguments.length > 1 ? this.each((value == null ? propertyRemove : typeof value === "function" ? propertyFunction : propertyConstant)(name, value)) : this.node()[name];
 }
 
-// quartz/node_modules/d3-selection/src/selection/classed.js
+// node_modules/d3-selection/src/selection/classed.js
 function classArray(string) {
   return string.trim().split(/^|\s+/);
 }
@@ -2081,7 +2081,7 @@ function classed_default(name, value) {
   return this.each((typeof value === "function" ? classedFunction : value ? classedTrue : classedFalse)(names, value));
 }
 
-// quartz/node_modules/d3-selection/src/selection/text.js
+// node_modules/d3-selection/src/selection/text.js
 function textRemove() {
   this.textContent = "";
 }
@@ -2100,7 +2100,7 @@ function text_default(value) {
   return arguments.length ? this.each(value == null ? textRemove : (typeof value === "function" ? textFunction : textConstant)(value)) : this.node().textContent;
 }
 
-// quartz/node_modules/d3-selection/src/selection/html.js
+// node_modules/d3-selection/src/selection/html.js
 function htmlRemove() {
   this.innerHTML = "";
 }
@@ -2119,7 +2119,7 @@ function html_default(value) {
   return arguments.length ? this.each(value == null ? htmlRemove : (typeof value === "function" ? htmlFunction : htmlConstant)(value)) : this.node().innerHTML;
 }
 
-// quartz/node_modules/d3-selection/src/selection/raise.js
+// node_modules/d3-selection/src/selection/raise.js
 function raise() {
   if (this.nextSibling)
     this.parentNode.appendChild(this);
@@ -2128,7 +2128,7 @@ function raise_default() {
   return this.each(raise);
 }
 
-// quartz/node_modules/d3-selection/src/selection/lower.js
+// node_modules/d3-selection/src/selection/lower.js
 function lower() {
   if (this.previousSibling)
     this.parentNode.insertBefore(this, this.parentNode.firstChild);
@@ -2137,7 +2137,7 @@ function lower_default() {
   return this.each(lower);
 }
 
-// quartz/node_modules/d3-selection/src/selection/append.js
+// node_modules/d3-selection/src/selection/append.js
 function append_default(name) {
   var create2 = typeof name === "function" ? name : creator_default(name);
   return this.select(function() {
@@ -2145,7 +2145,7 @@ function append_default(name) {
   });
 }
 
-// quartz/node_modules/d3-selection/src/selection/insert.js
+// node_modules/d3-selection/src/selection/insert.js
 function constantNull() {
   return null;
 }
@@ -2156,7 +2156,7 @@ function insert_default(name, before) {
   });
 }
 
-// quartz/node_modules/d3-selection/src/selection/remove.js
+// node_modules/d3-selection/src/selection/remove.js
 function remove() {
   var parent = this.parentNode;
   if (parent)
@@ -2166,7 +2166,7 @@ function remove_default() {
   return this.each(remove);
 }
 
-// quartz/node_modules/d3-selection/src/selection/clone.js
+// node_modules/d3-selection/src/selection/clone.js
 function selection_cloneShallow() {
   var clone = this.cloneNode(false), parent = this.parentNode;
   return parent ? parent.insertBefore(clone, this.nextSibling) : clone;
@@ -2179,12 +2179,12 @@ function clone_default(deep) {
   return this.select(deep ? selection_cloneDeep : selection_cloneShallow);
 }
 
-// quartz/node_modules/d3-selection/src/selection/datum.js
+// node_modules/d3-selection/src/selection/datum.js
 function datum_default(value) {
   return arguments.length ? this.property("__data__", value) : this.node().__data__;
 }
 
-// quartz/node_modules/d3-selection/src/selection/on.js
+// node_modules/d3-selection/src/selection/on.js
 function contextListener(listener) {
   return function(event) {
     listener.call(this, event, this.__data__);
@@ -2256,7 +2256,7 @@ function on_default(typename, value, options) {
   return this;
 }
 
-// quartz/node_modules/d3-selection/src/selection/dispatch.js
+// node_modules/d3-selection/src/selection/dispatch.js
 function dispatchEvent(node, type2, params) {
   var window2 = window_default(node), event = window2.CustomEvent;
   if (typeof event === "function") {
@@ -2284,7 +2284,7 @@ function dispatch_default2(type2, params) {
   return this.each((typeof params === "function" ? dispatchFunction : dispatchConstant)(type2, params));
 }
 
-// quartz/node_modules/d3-selection/src/selection/iterator.js
+// node_modules/d3-selection/src/selection/iterator.js
 function* iterator_default() {
   for (var groups = this._groups, j = 0, m2 = groups.length; j < m2; ++j) {
     for (var group = groups[j], i = 0, n = group.length, node; i < n; ++i) {
@@ -2294,7 +2294,7 @@ function* iterator_default() {
   }
 }
 
-// quartz/node_modules/d3-selection/src/selection/index.js
+// node_modules/d3-selection/src/selection/index.js
 var root = [null];
 function Selection(groups, parents) {
   this._groups = groups;
@@ -2346,12 +2346,12 @@ Selection.prototype = selection.prototype = {
 };
 var selection_default = selection;
 
-// quartz/node_modules/d3-selection/src/select.js
+// node_modules/d3-selection/src/select.js
 function select_default2(selector) {
   return typeof selector === "string" ? new Selection([[document.querySelector(selector)]], [document.documentElement]) : new Selection([[selector]], root);
 }
 
-// quartz/node_modules/d3-selection/src/sourceEvent.js
+// node_modules/d3-selection/src/sourceEvent.js
 function sourceEvent_default(event) {
   let sourceEvent;
   while (sourceEvent = event.sourceEvent)
@@ -2359,7 +2359,7 @@ function sourceEvent_default(event) {
   return event;
 }
 
-// quartz/node_modules/d3-selection/src/pointer.js
+// node_modules/d3-selection/src/pointer.js
 function pointer_default(event, node) {
   event = sourceEvent_default(event);
   if (node === void 0)
@@ -2380,12 +2380,12 @@ function pointer_default(event, node) {
   return [event.pageX, event.pageY];
 }
 
-// quartz/node_modules/d3-selection/src/selectAll.js
+// node_modules/d3-selection/src/selectAll.js
 function selectAll_default2(selector) {
   return typeof selector === "string" ? new Selection([document.querySelectorAll(selector)], [document.documentElement]) : new Selection([array(selector)], root);
 }
 
-// quartz/node_modules/d3-drag/src/noevent.js
+// node_modules/d3-drag/src/noevent.js
 var nonpassive = { passive: false };
 var nonpassivecapture = { capture: true, passive: false };
 function nopropagation(event) {
@@ -2396,7 +2396,7 @@ function noevent_default(event) {
   event.stopImmediatePropagation();
 }
 
-// quartz/node_modules/d3-drag/src/nodrag.js
+// node_modules/d3-drag/src/nodrag.js
 function nodrag_default(view) {
   var root2 = view.document.documentElement, selection2 = select_default2(view).on("dragstart.drag", noevent_default, nonpassivecapture);
   if ("onselectstart" in root2) {
@@ -2422,10 +2422,10 @@ function yesdrag(view, noclick) {
   }
 }
 
-// quartz/node_modules/d3-drag/src/constant.js
+// node_modules/d3-drag/src/constant.js
 var constant_default2 = (x2) => () => x2;
 
-// quartz/node_modules/d3-drag/src/event.js
+// node_modules/d3-drag/src/event.js
 function DragEvent(type2, {
   sourceEvent,
   subject,
@@ -2457,7 +2457,7 @@ DragEvent.prototype.on = function() {
   return value === this._ ? this : value;
 };
 
-// quartz/node_modules/d3-drag/src/drag.js
+// node_modules/d3-drag/src/drag.js
 function defaultFilter(event) {
   return !event.ctrlKey && !event.button;
 }
@@ -2606,7 +2606,7 @@ function drag_default() {
   return drag;
 }
 
-// quartz/node_modules/d3-color/src/define.js
+// node_modules/d3-color/src/define.js
 function define_default(constructor, factory, prototype) {
   constructor.prototype = factory.prototype = prototype;
   prototype.constructor = constructor;
@@ -2618,7 +2618,7 @@ function extend(parent, definition) {
   return prototype;
 }
 
-// quartz/node_modules/d3-color/src/color.js
+// node_modules/d3-color/src/color.js
 function Color() {
 }
 var darker = 0.7;
@@ -2968,7 +2968,7 @@ function hsl2rgb(h, m1, m2) {
   return (h < 60 ? m1 + (m2 - m1) * h / 60 : h < 180 ? m2 : h < 240 ? m1 + (m2 - m1) * (240 - h) / 60 : m1) * 255;
 }
 
-// quartz/node_modules/d3-interpolate/src/basis.js
+// node_modules/d3-interpolate/src/basis.js
 function basis(t1, v0, v1, v2, v3) {
   var t2 = t1 * t1, t3 = t2 * t1;
   return ((1 - 3 * t1 + 3 * t2 - t3) * v0 + (4 - 6 * t2 + 3 * t3) * v1 + (1 + 3 * t1 + 3 * t2 - 3 * t3) * v2 + t3 * v3) / 6;
@@ -2981,7 +2981,7 @@ function basis_default(values) {
   };
 }
 
-// quartz/node_modules/d3-interpolate/src/basisClosed.js
+// node_modules/d3-interpolate/src/basisClosed.js
 function basisClosed_default(values) {
   var n = values.length;
   return function(t) {
@@ -2990,10 +2990,10 @@ function basisClosed_default(values) {
   };
 }
 
-// quartz/node_modules/d3-interpolate/src/constant.js
+// node_modules/d3-interpolate/src/constant.js
 var constant_default3 = (x2) => () => x2;
 
-// quartz/node_modules/d3-interpolate/src/color.js
+// node_modules/d3-interpolate/src/color.js
 function linear(a2, d) {
   return function(t) {
     return a2 + t * d;
@@ -3014,7 +3014,7 @@ function nogamma(a2, b) {
   return d ? linear(a2, d) : constant_default3(isNaN(a2) ? b : a2);
 }
 
-// quartz/node_modules/d3-interpolate/src/rgb.js
+// node_modules/d3-interpolate/src/rgb.js
 var rgb_default = function rgbGamma(y2) {
   var color2 = gamma(y2);
   function rgb2(start2, end) {
@@ -3054,14 +3054,14 @@ function rgbSpline(spline) {
 var rgbBasis = rgbSpline(basis_default);
 var rgbBasisClosed = rgbSpline(basisClosed_default);
 
-// quartz/node_modules/d3-interpolate/src/number.js
+// node_modules/d3-interpolate/src/number.js
 function number_default(a2, b) {
   return a2 = +a2, b = +b, function(t) {
     return a2 * (1 - t) + b * t;
   };
 }
 
-// quartz/node_modules/d3-interpolate/src/string.js
+// node_modules/d3-interpolate/src/string.js
 var reA = /[-+]?(?:\d+\.?\d*|\.?\d+)(?:[eE][-+]?\d+)?/g;
 var reB = new RegExp(reA.source, "g");
 function zero(b) {
@@ -3110,7 +3110,7 @@ function string_default(a2, b) {
   });
 }
 
-// quartz/node_modules/d3-interpolate/src/transform/decompose.js
+// node_modules/d3-interpolate/src/transform/decompose.js
 var degrees = 180 / Math.PI;
 var identity = {
   translateX: 0,
@@ -3140,7 +3140,7 @@ function decompose_default(a2, b, c2, d, e, f) {
   };
 }
 
-// quartz/node_modules/d3-interpolate/src/transform/parse.js
+// node_modules/d3-interpolate/src/transform/parse.js
 var svgNode;
 function parseCss(value) {
   const m2 = new (typeof DOMMatrix === "function" ? DOMMatrix : WebKitCSSMatrix)(value + "");
@@ -3158,7 +3158,7 @@ function parseSvg(value) {
   return decompose_default(value.a, value.b, value.c, value.d, value.e, value.f);
 }
 
-// quartz/node_modules/d3-interpolate/src/transform/index.js
+// node_modules/d3-interpolate/src/transform/index.js
 function interpolateTransform(parse, pxComma, pxParen, degParen) {
   function pop(s) {
     return s.length ? s.pop() + " " : "";
@@ -3216,7 +3216,7 @@ function interpolateTransform(parse, pxComma, pxParen, degParen) {
 var interpolateTransformCss = interpolateTransform(parseCss, "px, ", "px)", "deg)");
 var interpolateTransformSvg = interpolateTransform(parseSvg, ", ", ")", ")");
 
-// quartz/node_modules/d3-interpolate/src/zoom.js
+// node_modules/d3-interpolate/src/zoom.js
 var epsilon2 = 1e-12;
 function cosh(x2) {
   return ((x2 = Math.exp(x2)) + 1 / x2) / 2;
@@ -3261,7 +3261,7 @@ var zoom_default = function zoomRho(rho, rho2, rho4) {
   return zoom;
 }(Math.SQRT2, 2, 4);
 
-// quartz/node_modules/d3-timer/src/timer.js
+// node_modules/d3-timer/src/timer.js
 var frame = 0;
 var timeout = 0;
 var interval = 0;
@@ -3374,7 +3374,7 @@ function sleep(time) {
   }
 }
 
-// quartz/node_modules/d3-timer/src/timeout.js
+// node_modules/d3-timer/src/timeout.js
 function timeout_default(callback, delay, time) {
   var t = new Timer();
   delay = delay == null ? 0 : +delay;
@@ -3385,7 +3385,7 @@ function timeout_default(callback, delay, time) {
   return t;
 }
 
-// quartz/node_modules/d3-transition/src/transition/schedule.js
+// node_modules/d3-transition/src/transition/schedule.js
 var emptyOn = dispatch_default("start", "end", "cancel", "interrupt");
 var emptyTween = [];
 var CREATED = 0;
@@ -3507,7 +3507,7 @@ function create(node, id2, self) {
   }
 }
 
-// quartz/node_modules/d3-transition/src/interrupt.js
+// node_modules/d3-transition/src/interrupt.js
 function interrupt_default(node, name) {
   var schedules = node.__transition, schedule, active, empty2 = true, i;
   if (!schedules)
@@ -3528,14 +3528,14 @@ function interrupt_default(node, name) {
     delete node.__transition;
 }
 
-// quartz/node_modules/d3-transition/src/selection/interrupt.js
+// node_modules/d3-transition/src/selection/interrupt.js
 function interrupt_default2(name) {
   return this.each(function() {
     interrupt_default(this, name);
   });
 }
 
-// quartz/node_modules/d3-transition/src/transition/tween.js
+// node_modules/d3-transition/src/transition/tween.js
 function tweenRemove(id2, name) {
   var tween0, tween1;
   return function() {
@@ -3598,13 +3598,13 @@ function tweenValue(transition2, name, value) {
   };
 }
 
-// quartz/node_modules/d3-transition/src/transition/interpolate.js
+// node_modules/d3-transition/src/transition/interpolate.js
 function interpolate_default(a2, b) {
   var c2;
   return (typeof b === "number" ? number_default : b instanceof color ? rgb_default : (c2 = color(b)) ? (b = c2, rgb_default) : string_default)(a2, b);
 }
 
-// quartz/node_modules/d3-transition/src/transition/attr.js
+// node_modules/d3-transition/src/transition/attr.js
 function attrRemove2(name) {
   return function() {
     this.removeAttribute(name);
@@ -3656,7 +3656,7 @@ function attr_default2(name, value) {
   return this.attrTween(name, typeof value === "function" ? (fullname.local ? attrFunctionNS2 : attrFunction2)(fullname, i, tweenValue(this, "attr." + name, value)) : value == null ? (fullname.local ? attrRemoveNS2 : attrRemove2)(fullname) : (fullname.local ? attrConstantNS2 : attrConstant2)(fullname, i, value));
 }
 
-// quartz/node_modules/d3-transition/src/transition/attrTween.js
+// node_modules/d3-transition/src/transition/attrTween.js
 function attrInterpolate(name, i) {
   return function(t) {
     this.setAttribute(name, i.call(this, t));
@@ -3701,7 +3701,7 @@ function attrTween_default(name, value) {
   return this.tween(key, (fullname.local ? attrTweenNS : attrTween)(fullname, value));
 }
 
-// quartz/node_modules/d3-transition/src/transition/delay.js
+// node_modules/d3-transition/src/transition/delay.js
 function delayFunction(id2, value) {
   return function() {
     init(this, id2).delay = +value.apply(this, arguments);
@@ -3717,7 +3717,7 @@ function delay_default(value) {
   return arguments.length ? this.each((typeof value === "function" ? delayFunction : delayConstant)(id2, value)) : get2(this.node(), id2).delay;
 }
 
-// quartz/node_modules/d3-transition/src/transition/duration.js
+// node_modules/d3-transition/src/transition/duration.js
 function durationFunction(id2, value) {
   return function() {
     set2(this, id2).duration = +value.apply(this, arguments);
@@ -3733,7 +3733,7 @@ function duration_default(value) {
   return arguments.length ? this.each((typeof value === "function" ? durationFunction : durationConstant)(id2, value)) : get2(this.node(), id2).duration;
 }
 
-// quartz/node_modules/d3-transition/src/transition/ease.js
+// node_modules/d3-transition/src/transition/ease.js
 function easeConstant(id2, value) {
   if (typeof value !== "function")
     throw new Error();
@@ -3746,7 +3746,7 @@ function ease_default(value) {
   return arguments.length ? this.each(easeConstant(id2, value)) : get2(this.node(), id2).ease;
 }
 
-// quartz/node_modules/d3-transition/src/transition/easeVarying.js
+// node_modules/d3-transition/src/transition/easeVarying.js
 function easeVarying(id2, value) {
   return function() {
     var v = value.apply(this, arguments);
@@ -3761,7 +3761,7 @@ function easeVarying_default(value) {
   return this.each(easeVarying(this._id, value));
 }
 
-// quartz/node_modules/d3-transition/src/transition/filter.js
+// node_modules/d3-transition/src/transition/filter.js
 function filter_default2(match) {
   if (typeof match !== "function")
     match = matcher_default(match);
@@ -3775,7 +3775,7 @@ function filter_default2(match) {
   return new Transition(subgroups, this._parents, this._name, this._id);
 }
 
-// quartz/node_modules/d3-transition/src/transition/merge.js
+// node_modules/d3-transition/src/transition/merge.js
 function merge_default2(transition2) {
   if (transition2._id !== this._id)
     throw new Error();
@@ -3792,7 +3792,7 @@ function merge_default2(transition2) {
   return new Transition(merges, this._parents, this._name, this._id);
 }
 
-// quartz/node_modules/d3-transition/src/transition/on.js
+// node_modules/d3-transition/src/transition/on.js
 function start(name) {
   return (name + "").trim().split(/^|\s+/).every(function(t) {
     var i = t.indexOf(".");
@@ -3815,7 +3815,7 @@ function on_default2(name, listener) {
   return arguments.length < 2 ? get2(this.node(), id2).on.on(name) : this.each(onFunction(id2, name, listener));
 }
 
-// quartz/node_modules/d3-transition/src/transition/remove.js
+// node_modules/d3-transition/src/transition/remove.js
 function removeFunction(id2) {
   return function() {
     var parent = this.parentNode;
@@ -3830,7 +3830,7 @@ function remove_default2() {
   return this.on("end.remove", removeFunction(this._id));
 }
 
-// quartz/node_modules/d3-transition/src/transition/select.js
+// node_modules/d3-transition/src/transition/select.js
 function select_default3(select) {
   var name = this._name, id2 = this._id;
   if (typeof select !== "function")
@@ -3848,7 +3848,7 @@ function select_default3(select) {
   return new Transition(subgroups, this._parents, name, id2);
 }
 
-// quartz/node_modules/d3-transition/src/transition/selectAll.js
+// node_modules/d3-transition/src/transition/selectAll.js
 function selectAll_default3(select) {
   var name = this._name, id2 = this._id;
   if (typeof select !== "function")
@@ -3869,13 +3869,13 @@ function selectAll_default3(select) {
   return new Transition(subgroups, parents, name, id2);
 }
 
-// quartz/node_modules/d3-transition/src/transition/selection.js
+// node_modules/d3-transition/src/transition/selection.js
 var Selection2 = selection_default.prototype.constructor;
 function selection_default2() {
   return new Selection2(this._groups, this._parents);
 }
 
-// quartz/node_modules/d3-transition/src/transition/style.js
+// node_modules/d3-transition/src/transition/style.js
 function styleNull(name, interpolate) {
   var string00, string10, interpolate0;
   return function() {
@@ -3918,7 +3918,7 @@ function style_default2(name, value, priority) {
   return value == null ? this.styleTween(name, styleNull(name, i)).on("end.style." + name, styleRemove2(name)) : typeof value === "function" ? this.styleTween(name, styleFunction2(name, i, tweenValue(this, "style." + name, value))).each(styleMaybeRemove(this._id, name)) : this.styleTween(name, styleConstant2(name, i, value), priority).on("end.style." + name, null);
 }
 
-// quartz/node_modules/d3-transition/src/transition/styleTween.js
+// node_modules/d3-transition/src/transition/styleTween.js
 function styleInterpolate(name, i, priority) {
   return function(t) {
     this.style.setProperty(name, i.call(this, t), priority);
@@ -3946,7 +3946,7 @@ function styleTween_default(name, value, priority) {
   return this.tween(key, styleTween(name, value, priority == null ? "" : priority));
 }
 
-// quartz/node_modules/d3-transition/src/transition/text.js
+// node_modules/d3-transition/src/transition/text.js
 function textConstant2(value) {
   return function() {
     this.textContent = value;
@@ -3962,7 +3962,7 @@ function text_default2(value) {
   return this.tween("text", typeof value === "function" ? textFunction2(tweenValue(this, "text", value)) : textConstant2(value == null ? "" : value + ""));
 }
 
-// quartz/node_modules/d3-transition/src/transition/textTween.js
+// node_modules/d3-transition/src/transition/textTween.js
 function textInterpolate(i) {
   return function(t) {
     this.textContent = i.call(this, t);
@@ -3990,7 +3990,7 @@ function textTween_default(value) {
   return this.tween(key, textTween(value));
 }
 
-// quartz/node_modules/d3-transition/src/transition/transition.js
+// node_modules/d3-transition/src/transition/transition.js
 function transition_default() {
   var name = this._name, id0 = this._id, id1 = newId();
   for (var groups = this._groups, m2 = groups.length, j = 0; j < m2; ++j) {
@@ -4009,7 +4009,7 @@ function transition_default() {
   return new Transition(groups, this._parents, name, id1);
 }
 
-// quartz/node_modules/d3-transition/src/transition/end.js
+// node_modules/d3-transition/src/transition/end.js
 function end_default() {
   var on0, on1, that = this, id2 = that._id, size = that.size();
   return new Promise(function(resolve, reject) {
@@ -4032,7 +4032,7 @@ function end_default() {
   });
 }
 
-// quartz/node_modules/d3-transition/src/transition/index.js
+// node_modules/d3-transition/src/transition/index.js
 var id = 0;
 function Transition(groups, parents, name, id2) {
   this._groups = groups;
@@ -4080,12 +4080,12 @@ Transition.prototype = transition.prototype = {
   [Symbol.iterator]: selection_prototype[Symbol.iterator]
 };
 
-// quartz/node_modules/d3-ease/src/cubic.js
+// node_modules/d3-ease/src/cubic.js
 function cubicInOut(t) {
   return ((t *= 2) <= 1 ? t * t * t : (t -= 2) * t * t + 2) / 2;
 }
 
-// quartz/node_modules/d3-transition/src/selection/transition.js
+// node_modules/d3-transition/src/selection/transition.js
 var defaultTiming = {
   time: null,
   // Set on use.
@@ -4119,11 +4119,11 @@ function transition_default2(name) {
   return new Transition(groups, this._parents, name, id2);
 }
 
-// quartz/node_modules/d3-transition/src/selection/index.js
+// node_modules/d3-transition/src/selection/index.js
 selection_default.prototype.interrupt = interrupt_default2;
 selection_default.prototype.transition = transition_default2;
 
-// quartz/node_modules/d3-brush/src/brush.js
+// node_modules/d3-brush/src/brush.js
 var { abs, max, min } = Math;
 function number1(e) {
   return [+e[0], +e[1]];
@@ -4165,7 +4165,7 @@ function type(t) {
   return { type: t };
 }
 
-// quartz/node_modules/d3-force/src/center.js
+// node_modules/d3-force/src/center.js
 function center_default(x2, y2) {
   var nodes, strength = 1;
   if (x2 == null)
@@ -4196,7 +4196,7 @@ function center_default(x2, y2) {
   return force;
 }
 
-// quartz/node_modules/d3-quadtree/src/add.js
+// node_modules/d3-quadtree/src/add.js
 function add_default(d) {
   const x2 = +this._x.call(null, d), y2 = +this._y.call(null, d);
   return add(this.cover(x2, y2), x2, y2, d);
@@ -4261,7 +4261,7 @@ function addAll(data) {
   return this;
 }
 
-// quartz/node_modules/d3-quadtree/src/cover.js
+// node_modules/d3-quadtree/src/cover.js
 function cover_default(x2, y2) {
   if (isNaN(x2 = +x2) || isNaN(y2 = +y2))
     return this;
@@ -4299,7 +4299,7 @@ function cover_default(x2, y2) {
   return this;
 }
 
-// quartz/node_modules/d3-quadtree/src/data.js
+// node_modules/d3-quadtree/src/data.js
 function data_default2() {
   var data = [];
   this.visit(function(node) {
@@ -4311,12 +4311,12 @@ function data_default2() {
   return data;
 }
 
-// quartz/node_modules/d3-quadtree/src/extent.js
+// node_modules/d3-quadtree/src/extent.js
 function extent_default(_) {
   return arguments.length ? this.cover(+_[0][0], +_[0][1]).cover(+_[1][0], +_[1][1]) : isNaN(this._x0) ? void 0 : [[this._x0, this._y0], [this._x1, this._y1]];
 }
 
-// quartz/node_modules/d3-quadtree/src/quad.js
+// node_modules/d3-quadtree/src/quad.js
 function quad_default(node, x0, y0, x1, y1) {
   this.node = node;
   this.x0 = x0;
@@ -4325,7 +4325,7 @@ function quad_default(node, x0, y0, x1, y1) {
   this.y1 = y1;
 }
 
-// quartz/node_modules/d3-quadtree/src/find.js
+// node_modules/d3-quadtree/src/find.js
 function find_default(x2, y2, radius) {
   var data, x0 = this._x0, y0 = this._y0, x1, y1, x22, y22, x3 = this._x1, y3 = this._y1, quads = [], node = this._root, q, i;
   if (node)
@@ -4366,7 +4366,7 @@ function find_default(x2, y2, radius) {
   return data;
 }
 
-// quartz/node_modules/d3-quadtree/src/remove.js
+// node_modules/d3-quadtree/src/remove.js
 function remove_default3(d) {
   if (isNaN(x2 = +this._x.call(null, d)) || isNaN(y2 = +this._y.call(null, d)))
     return this;
@@ -4414,12 +4414,12 @@ function removeAll(data) {
   return this;
 }
 
-// quartz/node_modules/d3-quadtree/src/root.js
+// node_modules/d3-quadtree/src/root.js
 function root_default() {
   return this._root;
 }
 
-// quartz/node_modules/d3-quadtree/src/size.js
+// node_modules/d3-quadtree/src/size.js
 function size_default2() {
   var size = 0;
   this.visit(function(node) {
@@ -4431,7 +4431,7 @@ function size_default2() {
   return size;
 }
 
-// quartz/node_modules/d3-quadtree/src/visit.js
+// node_modules/d3-quadtree/src/visit.js
 function visit_default(callback) {
   var quads = [], q, node = this._root, child, x0, y0, x1, y1;
   if (node)
@@ -4452,7 +4452,7 @@ function visit_default(callback) {
   return this;
 }
 
-// quartz/node_modules/d3-quadtree/src/visitAfter.js
+// node_modules/d3-quadtree/src/visitAfter.js
 function visitAfter_default(callback) {
   var quads = [], next = [], q;
   if (this._root)
@@ -4478,7 +4478,7 @@ function visitAfter_default(callback) {
   return this;
 }
 
-// quartz/node_modules/d3-quadtree/src/x.js
+// node_modules/d3-quadtree/src/x.js
 function defaultX(d) {
   return d[0];
 }
@@ -4486,7 +4486,7 @@ function x_default(_) {
   return arguments.length ? (this._x = _, this) : this._x;
 }
 
-// quartz/node_modules/d3-quadtree/src/y.js
+// node_modules/d3-quadtree/src/y.js
 function defaultY(d) {
   return d[1];
 }
@@ -4494,7 +4494,7 @@ function y_default(_) {
   return arguments.length ? (this._y = _, this) : this._y;
 }
 
-// quartz/node_modules/d3-quadtree/src/quadtree.js
+// node_modules/d3-quadtree/src/quadtree.js
 function quadtree(nodes, x2, y2) {
   var tree = new Quadtree(x2 == null ? defaultX : x2, y2 == null ? defaultY : y2, NaN, NaN, NaN, NaN);
   return nodes == null ? tree : tree.addAll(nodes);
@@ -4549,19 +4549,19 @@ treeProto.visitAfter = visitAfter_default;
 treeProto.x = x_default;
 treeProto.y = y_default;
 
-// quartz/node_modules/d3-force/src/constant.js
+// node_modules/d3-force/src/constant.js
 function constant_default5(x2) {
   return function() {
     return x2;
   };
 }
 
-// quartz/node_modules/d3-force/src/jiggle.js
+// node_modules/d3-force/src/jiggle.js
 function jiggle_default(random) {
   return (random() - 0.5) * 1e-6;
 }
 
-// quartz/node_modules/d3-force/src/link.js
+// node_modules/d3-force/src/link.js
 function index(d) {
   return d.index;
 }
@@ -4650,7 +4650,7 @@ function link_default(links) {
   return force;
 }
 
-// quartz/node_modules/d3-force/src/lcg.js
+// node_modules/d3-force/src/lcg.js
 var a = 1664525;
 var c = 1013904223;
 var m = 4294967296;
@@ -4659,7 +4659,7 @@ function lcg_default() {
   return () => (s = (a * s + c) % m) / m;
 }
 
-// quartz/node_modules/d3-force/src/simulation.js
+// node_modules/d3-force/src/simulation.js
 function x(d) {
   return d.x;
 }
@@ -4780,7 +4780,7 @@ function simulation_default(nodes) {
   };
 }
 
-// quartz/node_modules/d3-force/src/manyBody.js
+// node_modules/d3-force/src/manyBody.js
 function manyBody_default() {
   var nodes, node, random, alpha, strength = constant_default5(-30), strengths, distanceMin2 = 1, distanceMax2 = Infinity, theta2 = 0.81;
   function force(_) {
@@ -4870,10 +4870,10 @@ function manyBody_default() {
   return force;
 }
 
-// quartz/node_modules/d3-zoom/src/constant.js
+// node_modules/d3-zoom/src/constant.js
 var constant_default6 = (x2) => () => x2;
 
-// quartz/node_modules/d3-zoom/src/event.js
+// node_modules/d3-zoom/src/event.js
 function ZoomEvent(type2, {
   sourceEvent,
   target,
@@ -4889,7 +4889,7 @@ function ZoomEvent(type2, {
   });
 }
 
-// quartz/node_modules/d3-zoom/src/transform.js
+// node_modules/d3-zoom/src/transform.js
 function Transform(k, x2, y2) {
   this.k = k;
   this.x = x2;
@@ -4940,7 +4940,7 @@ function transform(node) {
   return node.__zoom;
 }
 
-// quartz/node_modules/d3-zoom/src/noevent.js
+// node_modules/d3-zoom/src/noevent.js
 function nopropagation3(event) {
   event.stopImmediatePropagation();
 }
@@ -4949,7 +4949,7 @@ function noevent_default3(event) {
   event.stopImmediatePropagation();
 }
 
-// quartz/node_modules/d3-zoom/src/zoom.js
+// node_modules/d3-zoom/src/zoom.js
 function defaultFilter2(event) {
   return (!event.ctrlKey || event.type === "wheel") && !event.button;
 }
@@ -5319,7 +5319,7 @@ function removeAllChildren(node) {
   }
 }
 
-// quartz/node_modules/github-slugger/index.js
+// node_modules/github-slugger/index.js
 var own = Object.hasOwnProperty;
 
 // quartz/util/path.ts
@@ -5559,7 +5559,7 @@ document.addEventListener("nav", async (e) => {
   containerIcon?.addEventListener("click", renderGlobalGraph);
 });
 })();
-(function () {// quartz/node_modules/@floating-ui/core/dist/floating-ui.core.browser.min.mjs
+(function () {// node_modules/@floating-ui/core/dist/floating-ui.core.browser.min.mjs
 function t(t2) {
   return t2.split("-")[1];
 }
@@ -5755,7 +5755,7 @@ var O = function(t2) {
   } };
 };
 
-// quartz/node_modules/@floating-ui/dom/dist/floating-ui.dom.browser.min.mjs
+// node_modules/@floating-ui/dom/dist/floating-ui.dom.browser.min.mjs
 function n2(t2) {
   var e2;
   return (null == (e2 = t2.ownerDocument) ? void 0 : e2.defaultView) || window;
@@ -6041,7 +6041,7 @@ document.addEventListener("nav", () => {
   }
 });
 })();
-(function () {// quartz/node_modules/plausible-tracker/build/module/lib/request.js
+(function () {// node_modules/plausible-tracker/build/module/lib/request.js
 function sendEvent(eventName, data, options) {
   const isLocalhost = /^localhost$|^127(?:\.[0-9]+){0,2}\.[0-9]+$|^(?:0*:)*?:?0*1$/.test(location.hostname) || location.protocol === "file:";
   if (!data.trackLocalhost && isLocalhost) {
@@ -6076,7 +6076,7 @@ function sendEvent(eventName, data, options) {
   };
 }
 
-// quartz/node_modules/plausible-tracker/build/module/lib/tracker.js
+// node_modules/plausible-tracker/build/module/lib/tracker.js
 function Plausible(defaults) {
   const getConfig = () => ({
     hashMode: false,
@@ -6181,14 +6181,14 @@ function Plausible(defaults) {
   };
 }
 
-// quartz/node_modules/plausible-tracker/build/module/index.js
+// node_modules/plausible-tracker/build/module/index.js
 var module_default = Plausible;
 
 // quartz/components/scripts/quartz/components/scripts/plausible.inline.ts
 var { trackPageview } = module_default();
 document.addEventListener("nav", () => trackPageview());
 })();
-(function () {// quartz/node_modules/micromorph/dist/index.js
+(function () {// node_modules/micromorph/dist/index.js
 var T = (e) => (t, r) => t[`node${e}`] === r[`node${e}`];
 var b = T("Name");
 var C = T("Type");
@@ -6358,7 +6358,7 @@ function P(e, t) {
   return O(e, r);
 }
 
-// quartz/node_modules/github-slugger/index.js
+// node_modules/github-slugger/index.js
 var own = Object.hasOwnProperty;
 
 // quartz/util/path.ts
