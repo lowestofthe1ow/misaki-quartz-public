@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{"id":"50dae098bd6a2240","type":"text","text":"\n\n## LE1 study list\n\nExam date: **14 February 2024**\n- [x] [[Propositional logic]]\n- [x] [[Equivalences]]\n- [x] [[Predicate logic]]\n- [x] [[Rules of inference]]\n- [ ] Set theory\n\n","x":-500,"y":-160,"width":300,"height":320,"color":"1"},
+		{"id":"dc88ff28108ddb33","type":"text","text":"## Machine project\n\n- [x] Interpretation\n- [ ] Implementation\n- [ ] Testing","x":-160,"y":-160,"width":260,"height":200},
+		{"id":"96d727b3ba7a56e0","type":"text","text":"# CSMATH1","x":280,"y":-300,"width":220,"height":80,"color":"6"},
+		{"id":"959fea70683376d1","type":"text","text":"# CCDSTRU","x":-280,"y":-300,"width":220,"height":80,"color":"6"},
+		{"id":"09c4d29e9af0873d","type":"text","text":"## LQ1 study list\n\nExam date: **16 February 2024**\n\n- [x] Functions\n- [ ] Limits\n\t- [ ] Epsilon-delta\n\t- [ ] Limits at infinity\n\t- [ ] Infinite limits\n\t- [ ] Asymptotes\n- [ ] Continuity","x":340,"y":-140,"width":300,"height":380,"color":"1"},
+		{"id":"33647a22b2411aaf","type":"text","text":"# GEMATMW\n\n","x":-440,"y":380,"width":260,"height":80,"color":"6"},
+		{"id":"de9f92f01cf77175","type":"text","text":"## LQ1 study list\n\nExam date: **15 February 2024**\n\n- [x] The Fibonacci sequence\n- [ ] Geometric transformation\n- [ ] Fractals and fractal dimension\n- [x] Logic","x":-160,"y":440,"width":355,"height":280,"color":"1"},
+		{"id":"de955f79c46e3aab","type":"file","file":"Term 2 Year 2/CCDSTRU/Machine Project/MP_Interpretation_Notes.pdf","subpath":"#page=1","x":0,"y":120,"width":260,"height":220}
+	],
+	"edges":[
+		{"id":"223e61014b2a86cf","fromNode":"959fea70683376d1","fromSide":"bottom","toNode":"50dae098bd6a2240","toSide":"top"},
+		{"id":"fe3069a9093e1c75","fromNode":"959fea70683376d1","fromSide":"bottom","toNode":"dc88ff28108ddb33","toSide":"top"},
+		{"id":"fdd267cd41448261","fromNode":"96d727b3ba7a56e0","fromSide":"bottom","toNode":"09c4d29e9af0873d","toSide":"top"},
+		{"id":"cf3526ba0e97703b","fromNode":"dc88ff28108ddb33","fromSide":"bottom","toNode":"de955f79c46e3aab","toSide":"left"},
+		{"id":"e69815db957aeae7","fromNode":"33647a22b2411aaf","fromSide":"right","toNode":"de9f92f01cf77175","toSide":"top"}
+	]
+}

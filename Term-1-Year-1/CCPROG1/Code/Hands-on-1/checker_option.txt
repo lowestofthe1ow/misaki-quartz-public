@@ -1,0 +1,9 @@
+extractDigit Implemented: 1
+
+/**************************
+If you were unable to implement extractDigit() properly,
+change the 1 above into a 0
+
+Do NOT forget to leave a space between the 1 or 0 and the ':' 
+before it
+**************************/

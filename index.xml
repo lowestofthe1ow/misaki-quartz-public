@@ -7,62 +7,62 @@
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
     <title>(Q&amp;A) Data representation</title>
-    <link>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-A.Y.-2023---2024/CCICOMP/(Q&A)-Data-representation</link>
-    <guid>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-A.Y.-2023---2024/CCICOMP/(Q&A)-Data-representation</guid>
+    <link>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-Year-1/CCICOMP/(Q&A)-Data-representation</link>
+    <guid>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-Year-1/CCICOMP/(Q&A)-Data-representation</guid>
     <description>See also: Data representation Represent +24 in 6-bit sign-and-magnitude § 0 1 1 0 0 0 + 16 8 4 2 1 Represent +24 in 6-bit one’s complement § 0 1 1 0 0 0 + 16 8 4 2 1 Represent +24 in 6-bit two’s complement § 0 1 1 0 0 0 + 16 8 4 2 1 Represent −30 in 8-bit sign-and-magnitude § 1 0 0 1 1 1 1 0 - 64 32 16 8 4 2 1 Represent −30 in 8-bit one’s complement § 0 0 0 1 1 1 1 0 1 1 1 0 0 0 0 1 - 64 32 16 8 4 2 1 Represent −30 in 8-bit two’s complement § 0 0 0 1 1 1 1 0 1 1 1 0 0 0 1 0 - 64 32 16 8 4 2 1 Compute the range for 10-bit sign-and-magnitude § −(2n−1)+1,2n−1−1 −(29)+1,29−1 −511,+511 Compute the range for 10-bit one’s complement § −(2n−1)+1,2n−1−1 −(29)+1,29−1 −511,+511 Compute the range for 10-bit two’s complement § −(2n−1),2n−1−1 −(29),29−1 −512,+511 What is the normalized form for IEEE SP? § ±1.</description>
     <pubDate>Fri, 29 Sep 2023 03:09:57 GMT</pubDate>
   </item><item>
     <title>Application software</title>
-    <link>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-A.Y.-2023---2024/CCICOMP/Application-software</link>
-    <guid>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-A.Y.-2023---2024/CCICOMP/Application-software</guid>
+    <link>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-Year-1/CCICOMP/Application-software</link>
+    <guid>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-Year-1/CCICOMP/Application-software</guid>
     <description>Applications § An application, or app, sometimes called application software, consists of programs designed to make users more productive, conduct business, or provide entertainment.</description>
     <pubDate>Sat, 02 Dec 2023 05:30:17 GMT</pubDate>
   </item><item>
     <title>Boolean, logic gates, and bitwise operations</title>
-    <link>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-A.Y.-2023---2024/CCICOMP/Boolean,-logic-gates,-and-bitwise-operations</link>
-    <guid>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-A.Y.-2023---2024/CCICOMP/Boolean,-logic-gates,-and-bitwise-operations</guid>
+    <link>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-Year-1/CCICOMP/Boolean,-logic-gates,-and-bitwise-operations</link>
+    <guid>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-Year-1/CCICOMP/Boolean,-logic-gates,-and-bitwise-operations</guid>
     <description>See also: Data representation Logic operations § OperationInputSymbolOutputBufferAANOTAAˉANDA,BABORA,BA+BNANDA,BABˉXORA,BAˉB+ABˉ Logic operations based on Boolean algebra may be used on Boolean data to produce a result of either true (1) or false (0).</description>
     <pubDate>Wed, 11 Oct 2023 16:40:25 GMT</pubDate>
   </item><item>
     <title>Character representation</title>
-    <link>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-A.Y.-2023---2024/CCICOMP/Character-representation</link>
-    <guid>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-A.Y.-2023---2024/CCICOMP/Character-representation</guid>
+    <link>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-Year-1/CCICOMP/Character-representation</link>
+    <guid>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-Year-1/CCICOMP/Character-representation</guid>
     <description>Character representation § Character data cannot be represented directly in a computer because computers process only bits; such data is represented indirectly by defining a table that assigns a numeric value to each character.</description>
     <pubDate>Thu, 21 Sep 2023 04:57:01 GMT</pubDate>
   </item><item>
     <title>Data representation</title>
-    <link>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-A.Y.-2023---2024/CCICOMP/Data-representation</link>
-    <guid>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-A.Y.-2023---2024/CCICOMP/Data-representation</guid>
+    <link>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-Year-1/CCICOMP/Data-representation</link>
+    <guid>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-Year-1/CCICOMP/Data-representation</guid>
     <description> Computer systems represent data electrically and process it with electrical switches with 2 states (on / off) that express binary data. Computers deal with all sorts of non-numeric data (e.</description>
     <pubDate>Thu, 14 Sep 2023 14:03:22 GMT</pubDate>
   </item><item>
     <title>Floating-point representation</title>
-    <link>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-A.Y.-2023---2024/CCICOMP/Floating-point-representation</link>
-    <guid>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-A.Y.-2023---2024/CCICOMP/Floating-point-representation</guid>
+    <link>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-Year-1/CCICOMP/Floating-point-representation</link>
+    <guid>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-Year-1/CCICOMP/Floating-point-representation</guid>
     <description>See also: Data representation IEEE Single Precision § Normalized form: ±1.M×2E′−127 Represent the number in binary -6.0625d = -110.0001b Get the normalized form: ±1.</description>
     <pubDate>Tue, 10 Oct 2023 03:25:34 GMT</pubDate>
   </item><item>
     <title>Integer representation</title>
-    <link>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-A.Y.-2023---2024/CCICOMP/Integer-representation</link>
-    <guid>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-A.Y.-2023---2024/CCICOMP/Integer-representation</guid>
+    <link>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-Year-1/CCICOMP/Integer-representation</link>
+    <guid>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-Year-1/CCICOMP/Integer-representation</guid>
     <description>See also: Data representation Sign and magnitude § Leftmost bit is used as a sign bit, i.e., 1 if negative and 0 if positive Fixed number of bits n; values range from −(2n−1)+1 to 2n−1−1 ___ ___ ___ ___ ___ ___ ___ ___ .</description>
     <pubDate>Fri, 29 Sep 2023 03:33:31 GMT</pubDate>
   </item><item>
     <title>Internetworking</title>
-    <link>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-A.Y.-2023---2024/CCICOMP/Internetworking</link>
-    <guid>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-A.Y.-2023---2024/CCICOMP/Internetworking</guid>
+    <link>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-Year-1/CCICOMP/Internetworking</link>
+    <guid>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-Year-1/CCICOMP/Internetworking</guid>
     <description>Computer networks § A computer network refers to the connection of two or more computers through software and hardware, facilitating communication between them.</description>
     <pubDate>Sat, 02 Dec 2023 06:29:01 GMT</pubDate>
   </item><item>
     <title>Introduction to number systems</title>
-    <link>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-A.Y.-2023---2024/CCICOMP/Introduction-to-number-systems</link>
-    <guid>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-A.Y.-2023---2024/CCICOMP/Introduction-to-number-systems</guid>
+    <link>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-Year-1/CCICOMP/Introduction-to-number-systems</link>
+    <guid>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-Year-1/CCICOMP/Introduction-to-number-systems</guid>
     <description> Computers process data into information and work exclusively with numbers. All data is represented in binary form, which represents data in combinations of 1’s and 0’s.</description>
     <pubDate>Fri, 15 Sep 2023 10:54:40 GMT</pubDate>
   </item><item>
     <title>Memory components</title>
-    <link>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-A.Y.-2023---2024/CCICOMP/Memory-components</link>
-    <guid>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-A.Y.-2023---2024/CCICOMP/Memory-components</guid>
+    <link>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-Year-1/CCICOMP/Memory-components</link>
+    <guid>https://https://lowestofthe1ow.github.io/misaki-quartz-public//Term-1-Year-1/CCICOMP/Memory-components</guid>
     <description>Internal memory § Also known as primary memory; refers to memory that stores small amounts of data that can be accessed quickly while the computer is running.</description>
     <pubDate>Thu, 30 Nov 2023 04:01:21 GMT</pubDate>
   </item>

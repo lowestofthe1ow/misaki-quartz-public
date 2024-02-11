@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[letterpaper, portrait, margin=1in]{geometry}
+
+\begin{document}
+
+\section*{Given $ f(x)=
+    \begin{cases}
+        2x + 3, & \text{if } x < 1  \\
+        4, & \text{if } x = 1 \\
+        x^{2}+2, & \text{if } x > 1
+    \end{cases} $}
+
+\subsection*{(a) Find $ \lim_{x \to 1^{+}} f(x) $.}
+
+\begin{flalign*}
+    \begin{tabular}{ c c }
+        $x$ & $f(x)$ \\
+        \hline
+        1.1000 & 3.2100 \\
+        1.0100 & 3.0201 \\
+        1.0010 & 3.0020 \\
+        1.0001 & 3.0002
+    \end{tabular}
+\end{flalign*}
+
+As $x$ approaches 1 from the right, $f(x)$ approaches 3.
+
+Thus, $\lim_{x \to 1^{+}} f(x)=3$
+
+\subsection*{(b) Find $ \lim_{x \to 1^{-}} f(x) $.}
+
+\begin{flalign*}
+    \begin{tabular}{ c c }
+        $x$ & $f(x)$ \\
+        \hline
+        0.9000 & 4.8000 \\
+        0.9900 & 4.9800 \\
+        0.9990 & 4.9980 \\
+        0.9999 & 4.9998
+    \end{tabular}
+\end{flalign*}
+
+As $x$ approaches 1 from the left, $f(x)$ approaches 5.
+
+Thus, $\lim_{x \to 1^{-}} f(x)=5$
+
+\subsection*{(c) Find $ \lim_{x \to 1} f(x) $.}
+
+\begin{equation}\label{twosidedlimit}
+    \lim_{x \to a}=L \iff \lim_{x \to a^{+}}=L=\lim_{x \to a^{-}} \\
+\end{equation}
+
+Given that $\lim_{x \to 1^{-}} f(x)=5 \neq \lim_{x \to 1^{+}} f(x)=3$, it follows that the limit of $f(x)$ as $x$
+approaches $a$ does not exist.
+
+\section*{Given $ f(x)=
+    \begin{cases}
+        x + 1, & \text{if } x < -1  \\
+        x^{2}, & \text{if } -1 \leq x \leq 1 \\
+        2 - x, & \text{if } x > 1
+    \end{cases} $}
+
+\subsection*{(c) Find $ \lim_{x \to -1} f(x) $.}
+
+Given that $\lim_{x \to 1^{-}} f(x)=5 \neq \lim_{x \to 1^{+}} f(x)=3$, it follows that the limit of $f(x)$ as $x$
+approaches $a$ does not exist \eqref{twosidedlimit}.
+
+\end{document}
